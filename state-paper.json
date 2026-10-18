@@ -1,0 +1,23 @@
+{
+  "cash": 500.0,
+  "consecutive_errors": 0,
+  "cooldowns": {},
+  "created_at": "2026-10-18T03:04:39",
+  "day": {
+    "date": "2026-10-18",
+    "start_equity": 500.0
+  },
+  "fees_total": 0.0,
+  "halted": null,
+  "last_run": "2026-10-18T03:04:39",
+  "mode": "paper",
+  "months": {},
+  "peak_equity": 500.0,
+  "positions": {},
+  "realized_pnl_total": 0.0,
+  "reserve_usd": 0.0,
+  "starting_equity": 500.0,
+  "trades": [],
+  "unswept_profit": 0.0,
+  "version": 1
+}
