@@ -182,13 +182,16 @@ class OnchainDesk:
         shortlist = [p for t, p in self.pairs.items() if t in candidates]
         reports = [assess(p, None, now_ms, oc) for p in shortlist if not flow_flags(p, now_ms, oc)]
         reports.sort(key=lambda r: r.score, reverse=True)
-        checked = []
+        checked, rpc_failures = [], 0
         for r in reports[: oc.max_holder_checks]:
-            try:
-                holders = self.data.holders(r.pair.token)
-            except Exception as err:
-                print(f"holders {r.pair.symbol}: {err}")
-                holders = None
+            holders = None
+            if rpc_failures < 3:  # every RPC refusing: don't burn the run retrying
+                try:
+                    holders = self.data.holders(r.pair.token)
+                    rpc_failures = 0
+                except Exception as err:
+                    rpc_failures += 1
+                    print(f"holders {r.pair.symbol}: {err}")
             checked.append(assess(r.pair, holders, now_ms, oc))
         self.reports = sorted(checked, key=lambda r: ({"FOLLOW": 0, "WATCH": 1}.get(r.verdict, 2), -r.score))
 

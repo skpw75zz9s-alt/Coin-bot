@@ -73,8 +73,18 @@ def cmd_run(args) -> int:
     return exit_code
 
 
+def _onchain_data():
+    from functools import partial
+
+    from .onchain.data import PUBLIC_RPCS, OnchainData, http_post_json
+
+    own = os.environ.get("SOLANA_RPC_URL", "").strip()
+    # One quick retry per endpoint: falling through to the next RPC beats waiting out a 429.
+    return OnchainData(post_json=partial(http_post_json, retries=2),
+                       rpc_urls=[own, *PUBLIC_RPCS] if own else list(PUBLIC_RPCS))
+
+
 def cmd_onchain_run(args) -> int:
-    from .onchain.data import OnchainData
     from .onchain.desk import OnchainDesk
 
     cfg = config_mod.load(args.config)
@@ -85,7 +95,7 @@ def cmd_onchain_run(args) -> int:
     if state is None:
         state = state_mod.new_state("paper", cfg.onchain.starting_cash_usd, iso(now_ms))
         notifier.send(f"👋 On-chain desk started (paper) with ${cfg.onchain.starting_cash_usd:,.2f}.")
-    desk = OnchainDesk(cfg, state, OnchainData(), notifier)
+    desk = OnchainDesk(cfg, state, _onchain_data(), notifier)
     exit_code = 0
     try:
         desk.run(now_ms)
@@ -107,10 +117,9 @@ def cmd_onchain_run(args) -> int:
 def cmd_onchain_scan(args) -> int:
     """Run the analyst on one token and print the verdict block. Never trades."""
     from .onchain.analyst import assess, render
-    from .onchain.data import OnchainData
 
     cfg = config_mod.load(args.config)
-    data = OnchainData()
+    data = _onchain_data()
     now_ms = int(time.time() * 1000)
     pair = data.pairs(cfg.onchain.chain, [args.token], cfg.onchain.dex_allowlist).get(args.token)
     if pair is None:

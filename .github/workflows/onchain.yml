@@ -28,6 +28,7 @@ jobs:
     env:
       COINBOT_MONTHLY_SUBSCRIPTION_USD: ${{ vars.COINBOT_MONTHLY_SUBSCRIPTION_USD }}
       COINBOT_WEBHOOK_URL: ${{ secrets.COINBOT_WEBHOOK_URL }}
+      SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}   # optional, e.g. a free Helius endpoint
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

@@ -11,7 +11,12 @@ from ..market import http_get_json
 
 DEXSCREENER = "https://api.dexscreener.com/"
 GECKOTERMINAL = "https://api.geckoterminal.com/api/v2/"
-SOLANA_RPC = "https://api.mainnet-beta.solana.com"
+# Free public endpoints, tried in order after your own (SOLANA_RPC_URL). The official one
+# rate-limits GitHub's shared runner IPs hard, so it goes last.
+PUBLIC_RPCS = [
+    "https://solana-rpc.publicnode.com",
+    "https://api.mainnet-beta.solana.com",
+]
 
 TOKEN_2022 = "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
 # Owners of pool vaults that are not the pool address itself.
@@ -123,10 +128,11 @@ class Holders:
 
 
 class OnchainData:
-    def __init__(self, get_json=http_get_json, post_json=http_post_json, rpc_url: str = SOLANA_RPC):
+    def __init__(self, get_json=http_get_json, post_json=http_post_json,
+                 rpc_urls: list[str] | None = None):
         self._get = get_json
         self._post = post_json
-        self.rpc_url = rpc_url
+        self.rpc_urls = [u for u in (rpc_urls or PUBLIC_RPCS) if u]
         self.all_pairs: dict[str, list[Pair]] = {}
 
     # -- discovery -------------------------------------------------------------------------
@@ -177,10 +183,20 @@ class OnchainData:
 
     # -- holders ---------------------------------------------------------------------------
     def _rpc(self, method: str, params: list):
-        resp = self._post(self.rpc_url, {"jsonrpc": "2.0", "id": 1, "method": method, "params": params})
-        if "error" in resp:
-            raise RuntimeError(f"{method}: {resp['error']}")
-        return resp["result"]
+        """Try each endpoint; the first that answers moves to the front for the next calls."""
+        errors = []
+        for url in list(self.rpc_urls):
+            try:
+                resp = self._post(url, {"jsonrpc": "2.0", "id": 1, "method": method, "params": params})
+                if "error" in resp:
+                    raise RuntimeError(resp["error"])
+            except Exception as err:
+                errors.append(f"{url.split('/')[2]}: {err}")
+                continue
+            self.rpc_urls.remove(url)
+            self.rpc_urls.insert(0, url)
+            return resp["result"]
+        raise RuntimeError(f"{method} failed on every RPC: {'; '.join(errors)}")
 
     def holders(self, mint: str) -> Holders:
         info = self._rpc("getAccountInfo", [mint, {"encoding": "jsonParsed"}])["value"]

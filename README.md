@@ -78,6 +78,11 @@ DexScreener and GeckoTerminal. It paper-trades the ones that pass. Its status pa
 wallet-tracking source, so they're reported as "not visible". It also can't see the catalyst or narrative.
 Missing holder data always means SKIP.
 
+**Holder data needs a Solana RPC.** Free public endpoints are tried first, but they often
+rate-limit GitHub's shared IPs. When that happens every token is SKIPped, because no holder data means no trade. For
+reliable holder checks, create a free [Helius](https://www.helius.dev) account and save its RPC URL
+(`https://mainnet.helius-rpc.com/?api-key=...`) as the repo secret `SOLANA_RPC_URL`.
+
 **Run it by hand:** Actions → *onchain-desk* → `scan` with a token mint address prints the analyst block
 for that token without trading.
 

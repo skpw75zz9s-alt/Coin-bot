@@ -118,6 +118,27 @@ class AnalystTests(unittest.TestCase):
     def test_missing_holder_data_never_follows(self):
         self.assertEqual(assess(parse_pair(pair_row()), None, NOW, self.oc).verdict, "SKIP")
 
+    def test_rpc_falls_back_when_rate_limited(self):
+        chain = FakeChain({"Mint1": pair_row()})
+        calls = []
+
+        def post(url, body):
+            calls.append(url)
+            if "limited" in url:
+                raise RuntimeError("HTTP Error 429: Too Many Requests")
+            return chain.post(url, body)
+
+        data = OnchainData(get_json=chain.get, post_json=post, rpc_urls=["https://limited", "https://ok"])
+        data.pairs("solana", ["Mint1"], self.oc.dex_allowlist)
+        self.assertAlmostEqual(data.holders("Mint1").top10_pct, 0.10)
+        self.assertEqual(data.rpc_urls[0], "https://ok")  # the working one is tried first next time
+        self.assertEqual(calls.count("https://limited"), 1)
+
+        dead = OnchainData(get_json=chain.get, post_json=lambda u, b: (_ for _ in ()).throw(RuntimeError("429")),
+                           rpc_urls=["https://a", "https://b"])
+        with self.assertRaisesRegex(RuntimeError, "failed on every RPC"):
+            dead.holders("Mint1")
+
     def test_amm_authority_excluded(self):
         auth = next(iter(AMM_AUTHORITIES))
         chain = FakeChain({"Mint1": pair_row()}, holders=[(auth, 500_000_000), ("W", 1_000_000)])
