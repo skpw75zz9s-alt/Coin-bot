@@ -102,12 +102,27 @@ def _load_series(directory: str) -> dict[str, list[Candle]]:
     return series
 
 
-def backtest(cfg, series: dict[str, list[Candle]], spread_pct: float = 0.003) -> dict:
+def _buy_and_hold_pct(series: dict[str, list[Candle]], start_ms: int, end_ms: int) -> float | None:
+    """Average return of simply holding every coin through the window, for comparison."""
+    moves = []
+    for candles in series.values():
+        inside = [c for c in candles if start_ms <= c.ts < end_ms]
+        if len(inside) > 1 and inside[0].open > 0:
+            moves.append(inside[-1].close / inside[0].open - 1)
+    return round(100 * sum(moves) / len(moves), 2) if moves else None
+
+
+def backtest(cfg, series: dict[str, list[Candle]], spread_pct: float = 0.003,
+             start_ms: int | None = None, end_ms: int | None = None) -> dict:
+    """Replay history through the team. Candles before start_ms only serve as warm-up."""
     market = ReplayMarket(series, cfg.analyst.timeframe, spread_pct)
     state = state_mod.new_state("paper", cfg.paper.starting_cash_usd, "backtest")
     desk = Desk(cfg, state, market, PaperBroker(cfg.paper.fee_pct, cfg.paper.slippage_pct))
     peak, max_dd, equity = 0.0, 0.0, cfg.paper.starting_cash_usd
-    timeline = market.timeline()
+    timeline = [t for t in market.timeline()
+                if (start_ms is None or t >= start_ms) and (end_ms is None or t <= end_ms)]
+    if not timeline:
+        raise ValueError("no candles in the backtest window")
     for now_ms in timeline:
         market.now_ms = now_ms
         equity = desk.run(now_ms)["equity"] + state["reserve_usd"]
@@ -128,8 +143,37 @@ def backtest(cfg, series: dict[str, list[Candle]], spread_pct: float = 0.003) ->
         "reserve": round(state["reserve_usd"], 2),
         "subscription_months_covered": round(state["reserve_usd"] / cfg.treasury.monthly_subscription_usd, 2)
         if cfg.treasury.monthly_subscription_usd else None,
+        "buy_and_hold_pct": _buy_and_hold_pct(series, timeline[0], timeline[-1]),
         "halted": state["halted"],
         "open_positions": list(state["positions"]),
+    }
+
+
+def walk_forward(cfg, series: dict[str, list[Candle]], window_days: int,
+                 spread_pct: float = 0.003) -> dict:
+    """Split the history into back-to-back windows and backtest each one from a fresh $start."""
+    step = window_days * 86_400_000
+    first = min(c.ts for s in series.values() for c in s if s)
+    last = max(c.ts for s in series.values() for c in s if s)
+    warmup = (cfg.analyst.candles + 2) * 3_600_000
+    windows, start = [], first + warmup
+    while start + step <= last + 3_600_000:
+        r = backtest(cfg, series, spread_pct, start, start + step)
+        r["from"] = iso(start)[:10]
+        r["to"] = iso(start + step)[:10]
+        windows.append(r)
+        start += step
+    rets = [w["return_pct"] for w in windows]
+    return {
+        "window_days": window_days,
+        "windows": [{k: w[k] for k in ("from", "to", "return_pct", "buy_and_hold_pct",
+                                        "max_drawdown_pct", "trades", "win_rate_pct",
+                                        "reserve", "halted")} for w in windows],
+        "profitable_windows": f"{sum(r > 0 for r in rets)}/{len(rets)}",
+        "avg_return_pct": round(sum(rets) / len(rets), 2) if rets else None,
+        "worst_return_pct": min(rets) if rets else None,
+        "best_return_pct": max(rets) if rets else None,
+        "total_reserve": round(sum(w["reserve"] for w in windows), 2),
     }
 
 
@@ -146,7 +190,11 @@ def cmd_backtest(args) -> int:
                 print(f"fetched {len(series[name])} candles for {name}", file=sys.stderr)
             except Exception as err:
                 print(f"skip {name}: {err}", file=sys.stderr)
-    print(json.dumps(backtest(cfg, series, args.spread), indent=2))
+    if args.window:
+        result = walk_forward(cfg, series, args.window, args.spread)
+    else:
+        result = backtest(cfg, series, args.spread)
+    print(json.dumps(result, indent=2))
     return 0
 
 
@@ -162,6 +210,8 @@ def main(argv=None) -> int:
     bt.add_argument("--days", type=int, default=30)
     bt.add_argument("--data", help="directory of <INSTRUMENT>.json candle files (t,o,h,l,c,v)")
     bt.add_argument("--spread", type=float, default=0.003, help="assumed bid/ask spread")
+    bt.add_argument("--window", type=int, default=0,
+                    help="split history into back-to-back windows of this many days")
     args = parser.parse_args(argv)
     return {"run": cmd_run, "status": cmd_status, "resume": cmd_resume,
             "backtest": cmd_backtest}[args.command](args)

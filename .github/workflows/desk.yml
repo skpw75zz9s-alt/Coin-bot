@@ -13,6 +13,9 @@ on:
       days:
         description: "Backtest length in days"
         default: "60"
+      window:
+        description: "Backtest: split into windows of N days (0 = one run)"
+        default: "0"
 
 permissions:
   contents: write   # to save state on the bot-state branch
@@ -55,7 +58,7 @@ jobs:
 
       - name: Backtest
         if: inputs.command == 'backtest'
-        run: python -m coinbot backtest --days "${{ inputs.days }}" | tee -a "$GITHUB_STEP_SUMMARY"
+        run: python -m coinbot backtest --days "${{ inputs.days }}" --window "${{ inputs.window || 0 }}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Resume after halt
         if: inputs.command == 'resume'

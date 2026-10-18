@@ -5,7 +5,7 @@ from pathlib import Path
 
 from coinbot import config as config_mod
 from coinbot import state as state_mod
-from coinbot.__main__ import backtest, main
+from coinbot.__main__ import backtest, main, walk_forward
 from coinbot.broker import CryptoComBroker, PaperBroker, _floor_to_tick, sign_request
 from coinbot.desk import Desk
 from coinbot.indicators import ema, rsi
@@ -308,6 +308,10 @@ class BacktestTests(unittest.TestCase):
         self.assertGreater(result["days"], 19)
         self.assertLessEqual(len(result["open_positions"]), c.risk.max_open_positions)
         self.assertGreaterEqual(result["reserve"], 0)
+        self.assertIsNotNone(result["buy_and_hold_pct"])
+        wf = walk_forward(c, series, 5)
+        self.assertEqual(len(wf["windows"]), 2)  # 20 days minus ~5 days of warm-up = two full 5-day windows
+        self.assertTrue(all(w["from"] < w["to"] for w in wf["windows"]))
 
 
 if __name__ == "__main__":
