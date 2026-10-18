@@ -21,7 +21,7 @@ permissions:
   contents: write   # to save state on the bot-state branch
 
 concurrency:
-  group: memecoin-desk   # never let two runs touch the same state
+  group: bot-state   # shared with onchain.yml: never let two runs touch the same state
   cancel-in-progress: false
 
 jobs:

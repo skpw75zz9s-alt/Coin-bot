@@ -55,6 +55,37 @@ never carry over.
 key that can withdraw is a key that can be stolen and drained. The reserve is USD the bot won't touch.
 When it covers a month, move that money out yourself and pay the bill.
 
+## On-chain desk (Solana DEX memecoins, paper only)
+
+A second desk runs every 15 minutes and applies an on-chain analyst checklist to tokens trending on
+DexScreener and GeckoTerminal. It paper-trades the ones that pass. Its status page is
+`ONCHAIN.md` on the `bot-state` branch, and each call is written in the checklist's format
+(VERDICT / HOLDER BASE / LIQUIDITY / ... / WHO IS MY EXIT LIQUIDITY?).
+
+**What it checks, using free data:**
+
+- **Liquidity:** pool depth, liquidity as a share of market cap (under 3% is fragile), pool age, and whether
+  the coin is already up more than 300% in a day.
+- **Flow:** buyers vs. sellers in the last hour, distribution (sellers > 0.8× buyers while price
+  holds), and retail arriving late (more buyers but much smaller tickets).
+- **Holders (Solana RPC):** top-10 and largest-wallet share with pool vaults excluded, whether the mint or
+  freeze authority is still enabled, Token-2022 mints, and how far price falls if the top 3 sell half.
+- **Exits:** sells 40% at 1.5× and another 40% at 2.5×, then trails the rest 30% below the peak. It exits fully at −25%, on
+  a 30% liquidity pull, when 1h sells are more than 2× buys, or after 48h. Sizing is 4% of equity per token and never more
+  than 1% of pool liquidity. After −30% from the peak it sells everything and halts.
+
+**What it can't see:** smart-money wallets, leaderboard track records, and same-funder bundles. Those need a paid
+wallet-tracking source, so they're reported as "not visible". It also can't see the catalyst or narrative.
+Missing holder data always means SKIP.
+
+**Run it by hand:** Actions → *onchain-desk* → `scan` with a token mint address prints the analyst block
+for that token without trading.
+
+**Why there's no live mode yet:** live trading needs a Solana wallet's private key stored in GitHub.
+Paper fills include pool price impact and a 1% fee. They can't model honeypots, sell taxes or
+rugs that happen between 15-minute checks, so **real results will be worse than paper**. Add live mode only if
+paper stays positive for weeks.
+
 ## Running it yourself
 
 No dependencies, just Python 3.11+.
@@ -66,6 +97,8 @@ python -m coinbot status                   # print the latest report
 python -m coinbot resume                   # clear a kill-switch halt
 python -m coinbot backtest --days 60       # replay history through the same team
 python -m coinbot backtest --data dir/     # ...or from <INSTRUMENT>.json files of {t,o,h,l,c,v}
+python -m coinbot onchain-run              # one on-chain paper cycle
+python -m coinbot onchain-scan --token <mint>   # analyst verdict for one token
 ```
 
 ## Good to know

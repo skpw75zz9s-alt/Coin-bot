@@ -1,0 +1,69 @@
+name: onchain-desk
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # on-chain memecoins move fast; GitHub may delay runs a few minutes
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "run = one paper-trading cycle; scan = analyse one token (no trading)"
+        type: choice
+        default: run
+        options: [run, scan]
+      token:
+        description: "Token mint address (for scan)"
+        default: ""
+
+permissions:
+  contents: write   # to save state on the bot-state branch
+
+concurrency:
+  group: bot-state   # shared with desk.yml: never let two runs touch the same state
+  cancel-in-progress: false
+
+jobs:
+  onchain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      COINBOT_MONTHLY_SUBSCRIPTION_USD: ${{ vars.COINBOT_MONTHLY_SUBSCRIPTION_USD }}
+      COINBOT_WEBHOOK_URL: ${{ secrets.COINBOT_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Self-test   # a broken commit can't trade
+        run: python -m unittest discover -s tests
+
+      - name: Analyse one token
+        if: inputs.command == 'scan'
+        env:
+          TOKEN: ${{ inputs.token }}
+        run: python -m coinbot onchain-scan --token "$TOKEN" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Load state
+        if: inputs.command != 'scan'
+        run: |
+          git config user.name "memecoin-desk"
+          git config user.email "memecoin-desk@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin bot-state >/dev/null; then
+            git fetch --depth=1 origin bot-state:bot-state
+            git worktree add state bot-state
+          else
+            git worktree add --orphan -b bot-state state
+          fi
+
+      - name: Run the on-chain desk
+        if: inputs.command != 'scan'
+        run: python -m coinbot --state-dir state onchain-run
+
+      - name: Save state
+        if: always() && inputs.command != 'scan'
+        run: |
+          cd state
+          [ -f ONCHAIN.md ] && cat ONCHAIN.md >> "$GITHUB_STEP_SUMMARY"
+          git add -A
+          git commit -q -m "on-chain run $(date -u +%FT%TZ)" || exit 0
+          git push -q origin bot-state

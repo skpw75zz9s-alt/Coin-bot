@@ -73,6 +73,58 @@ def cmd_run(args) -> int:
     return exit_code
 
 
+def cmd_onchain_run(args) -> int:
+    from .onchain.data import OnchainData
+    from .onchain.desk import OnchainDesk
+
+    cfg = config_mod.load(args.config)
+    path = Path(args.state_dir) / "state-onchain.json"
+    now_ms = int(time.time() * 1000)
+    notifier = Notifier(os.environ.get("COINBOT_WEBHOOK_URL"))
+    state = state_mod.load(path)
+    if state is None:
+        state = state_mod.new_state("paper", cfg.onchain.starting_cash_usd, iso(now_ms))
+        notifier.send(f"👋 On-chain desk started (paper) with ${cfg.onchain.starting_cash_usd:,.2f}.")
+    desk = OnchainDesk(cfg, state, OnchainData(), notifier)
+    exit_code = 0
+    try:
+        desk.run(now_ms)
+        state["consecutive_errors"] = 0
+        (Path(args.state_dir) / "ONCHAIN.md").write_text(desk.report_md())
+        print(f"{iso(now_ms)} on-chain equity ${desk.equity():,.2f} "
+              f"positions {len(state['positions'])} scan {state.get('last_scan')}")
+    except Exception as err:
+        state["consecutive_errors"] = state.get("consecutive_errors", 0) + 1
+        print(f"on-chain run failed ({state['consecutive_errors']} in a row): {err!r}", file=sys.stderr)
+        if state["consecutive_errors"] == ERRORS_BEFORE_ALERT:
+            notifier.send(f"⚠️ On-chain desk has failed {ERRORS_BEFORE_ALERT} runs in a row: {err}")
+        exit_code = 1 if state["consecutive_errors"] >= ERRORS_BEFORE_ALERT else 0
+    finally:
+        state_mod.save(path, state)
+    return exit_code
+
+
+def cmd_onchain_scan(args) -> int:
+    """Run the analyst on one token and print the verdict block. Never trades."""
+    from .onchain.analyst import assess, render
+    from .onchain.data import OnchainData
+
+    cfg = config_mod.load(args.config)
+    data = OnchainData()
+    now_ms = int(time.time() * 1000)
+    pair = data.pairs(cfg.onchain.chain, [args.token], cfg.onchain.dex_allowlist).get(args.token)
+    if pair is None:
+        print(f"No {'/'.join(cfg.onchain.dex_allowlist)} pool found for {args.token} on {cfg.onchain.chain}.")
+        return 1
+    try:
+        holders = data.holders(args.token)
+    except Exception as err:
+        print(f"holder data unavailable: {err}", file=sys.stderr)
+        holders = None
+    print(render(assess(pair, holders, now_ms, cfg.onchain), now_ms, cfg.onchain))
+    return 0
+
+
 def cmd_status(args) -> int:
     report = Path(args.state_dir) / "REPORT.md"
     print(report.read_text() if report.exists() else "No report yet; the desk hasn't run.")
@@ -206,6 +258,9 @@ def main(argv=None) -> int:
     sub.add_parser("run", help="run one cycle of the desk")
     sub.add_parser("status", help="print the latest report")
     sub.add_parser("resume", help="clear a kill-switch halt")
+    sub.add_parser("onchain-run", help="run one cycle of the on-chain (Solana DEX) paper desk")
+    scan = sub.add_parser("onchain-scan", help="analyse one token and print the verdict block")
+    scan.add_argument("--token", required=True, help="token mint address")
     bt = sub.add_parser("backtest", help="replay history through the same team")
     bt.add_argument("--days", type=int, default=30)
     bt.add_argument("--data", help="directory of <INSTRUMENT>.json candle files (t,o,h,l,c,v)")
@@ -214,7 +269,8 @@ def main(argv=None) -> int:
                     help="split history into back-to-back windows of this many days")
     args = parser.parse_args(argv)
     return {"run": cmd_run, "status": cmd_status, "resume": cmd_resume,
-            "backtest": cmd_backtest}[args.command](args)
+            "backtest": cmd_backtest, "onchain-run": cmd_onchain_run,
+            "onchain-scan": cmd_onchain_scan}[args.command](args)
 
 
 if __name__ == "__main__":
