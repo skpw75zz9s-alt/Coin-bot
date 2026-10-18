@@ -52,22 +52,37 @@ class TreasurerTests(unittest.TestCase):
     def setUp(self):
         self.cfg = cfg().treasury  # $20 goal, 50% then 20%
         self.state = state_mod.new_state("paper", 500, "x")
+        self.state["starting_equity"] = 500.0
+
+    def trade(self, pnl, day="2026-10-01"):
+        """Close a trade the way the desk does: cash moves first, then the treasurer books it."""
+        self.state["cash"] += pnl
+        return record_realized(self.state, pnl, day, self.cfg,
+                               self.state["cash"] - self.state["reserve_usd"])
 
     def test_sweeps_half_until_goal_then_less(self):
-        self.assertAlmostEqual(record_realized(self.state, 10, "2026-10-01", self.cfg), 5.0)
+        self.assertAlmostEqual(self.trade(10), 5.0)
         # 30 more profit: 30 needed at 50% to finish the $15 left, then nothing extra.
-        self.assertAlmostEqual(record_realized(self.state, 30, "2026-10-02", self.cfg), 15.0)
-        self.assertTrue(coverage(self.state, "2026-10-02", self.cfg)["covered_this_month"])
-        self.assertAlmostEqual(record_realized(self.state, 10, "2026-10-03", self.cfg), 2.0)
+        self.assertAlmostEqual(self.trade(30), 15.0)
+        self.assertTrue(coverage(self.state, "2026-10-01", self.cfg)["covered_this_month"])
+        self.assertAlmostEqual(self.trade(10), 2.0)
 
     def test_losses_must_be_recovered_before_sweeping(self):
-        record_realized(self.state, -10, "2026-10-01", self.cfg)
-        self.assertEqual(record_realized(self.state, 6, "2026-10-02", self.cfg), 0.0)
-        self.assertAlmostEqual(record_realized(self.state, 8, "2026-10-03", self.cfg), 2.0)
+        self.trade(-10)
+        self.assertEqual(self.trade(6), 0.0)            # pot at 496, still below start
+        self.assertAlmostEqual(self.trade(8), 2.0)      # pot at 504: only the $4 above start counts
         self.assertAlmostEqual(self.state["reserve_usd"], 2.0)
 
+    def test_never_sweeps_starting_capital_after_a_drawdown(self):
+        self.assertAlmostEqual(self.trade(20), 10.0)    # pot 510 after sweep
+        self.trade(-40)                                 # pot 470: below start
+        self.assertEqual(self.trade(25), 0.0)           # 495: a win, but not real profit yet
+        self.assertAlmostEqual(self.trade(15), 5.0)     # 510: sweep half of the $10 above start
+        self.assertLessEqual(self.state["reserve_usd"],
+                             self.state["realized_pnl_total"] + 1e-9)
+
     def test_goal_resets_each_month(self):
-        record_realized(self.state, 100, "2026-10-01", self.cfg)
+        self.trade(100)
         self.assertFalse(coverage(self.state, "2026-11-01", self.cfg)["covered_this_month"])
 
 

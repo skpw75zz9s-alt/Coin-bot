@@ -68,7 +68,9 @@ class Desk:
         })
         self.state["cooldowns"][name] = self.now_ms + self.cfg.risk.cooldown_hours * 3_600_000
         before = coverage(self.state, now_iso, self.cfg.treasury)["covered_this_month"]
-        swept = record_realized(self.state, pnl, now_iso, self.cfg.treasury)
+        book_equity = (self.state["cash"] - self.state["reserve_usd"]
+                       + sum(p["cost_usd"] for p in self.state["positions"].values()))
+        swept = record_realized(self.state, pnl, now_iso, self.cfg.treasury, book_equity)
         cov = coverage(self.state, now_iso, self.cfg.treasury)
         msg = f"{'🟢' if pnl > 0 else '🔴'} Sold {name} ({reason}) P&L ${pnl:+.2f}"
         if swept:

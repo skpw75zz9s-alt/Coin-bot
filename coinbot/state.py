@@ -18,7 +18,6 @@ def new_state(mode: str, starting_cash: float, now_iso: str) -> dict:
         "starting_equity": None,        # set on the first run
         "peak_equity": None,
         "reserve_usd": 0.0,             # ring-fenced subscription money, never traded
-        "unswept_profit": 0.0,          # net realized P&L not yet split with the reserve
         "realized_pnl_total": 0.0,
         "fees_total": 0.0,
         "positions": {},

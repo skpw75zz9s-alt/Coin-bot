@@ -20,7 +20,7 @@ Each role is one small file in `coinbot/team/`:
 | **Analyst** | Looks for volume-backed breakouts in an uptrend. The close must beat the 24h high on at least 2× normal volume, with fast EMA above slow EMA. It skips coins that were already overbought, that printed one giant candle, or that are up more than 60% in a day. |
 | **Risk manager** | Sizes each trade so a stopped-out position costs about 1% of equity. Caps each position at 25% of equity and 0.5% of the coin's daily volume, with at most 3 positions. After −5% in a day it stops buying until the next day. **After −25% from the peak it sells everything and halts** until you resume it. |
 | **Trader** | Exits on −8% stop-loss, +25% take-profit, a 6% trailing stop once a position is up 8%, or after 72h. After exiting a coin it waits 12h before buying it again. |
-| **Treasurer** | Moves 50% of net realized profit into a ring-fenced **subscription reserve** until this month's bill is covered, then 20% after that. Losses have to be won back before anything else is swept. The reserve is never traded. |
+| **Treasurer** | Moves 50% of realized profit into a ring-fenced **subscription reserve** until this month's bill is covered, then 20% after that. It only sweeps profit **above your starting capital**: after a losing stretch nothing is set aside until the pot is back above where it started, so the reserve never holds your own money. The reserve is never traded. |
 | **Reporter** | Writes `REPORT.md` every run. It pings your webhook on trades, when the month gets covered, on a halt, after 3 failed runs in a row, and with a Monday digest. |
 
 `coinbot/desk.py` runs them in that order once an hour. Every number above is set in [`config.toml`](config.toml).
