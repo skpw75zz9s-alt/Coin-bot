@@ -1,0 +1,75 @@
+name: memecoin-desk
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # hourly, a few minutes after the 1h candle closes
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "What to do"
+        type: choice
+        default: run
+        options: [run, resume, backtest]
+      days:
+        description: "Backtest length in days"
+        default: "60"
+
+permissions:
+  contents: write   # to save state on the bot-state branch
+
+concurrency:
+  group: memecoin-desk   # never let two runs touch the same state
+  cancel-in-progress: false
+
+jobs:
+  desk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      COINBOT_MODE: ${{ vars.COINBOT_MODE || 'paper' }}
+      COINBOT_MONTHLY_SUBSCRIPTION_USD: ${{ vars.COINBOT_MONTHLY_SUBSCRIPTION_USD }}
+      COINBOT_LIVE_MAX_CAPITAL_USD: ${{ vars.COINBOT_LIVE_MAX_CAPITAL_USD }}
+      COINBOT_LIVE_CONFIRM: ${{ secrets.COINBOT_LIVE_CONFIRM }}
+      COINBOT_WEBHOOK_URL: ${{ secrets.COINBOT_WEBHOOK_URL }}
+      CRYPTOCOM_API_KEY: ${{ secrets.CRYPTOCOM_API_KEY }}
+      CRYPTOCOM_API_SECRET: ${{ secrets.CRYPTOCOM_API_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Self-test   # a broken commit can't trade
+        run: python -m unittest discover -s tests
+
+      - name: Load state
+        run: |
+          git config user.name "memecoin-desk"
+          git config user.email "memecoin-desk@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin bot-state >/dev/null; then
+            git fetch --depth=1 origin bot-state:bot-state
+            git worktree add state bot-state
+          else
+            git worktree add --orphan -b bot-state state
+          fi
+
+      - name: Backtest
+        if: inputs.command == 'backtest'
+        run: python -m coinbot backtest --days "${{ inputs.days }}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Resume after halt
+        if: inputs.command == 'resume'
+        run: python -m coinbot --state-dir state resume
+
+      - name: Run the desk
+        if: inputs.command != 'backtest'
+        run: python -m coinbot --state-dir state run
+
+      - name: Save state
+        if: always() && inputs.command != 'backtest'
+        run: |
+          cd state
+          [ -f REPORT.md ] && cat REPORT.md >> "$GITHUB_STEP_SUMMARY"
+          git add -A
+          git commit -q -m "desk run $(date -u +%FT%TZ)" || exit 0
+          git push -q origin bot-state

@@ -1,0 +1,69 @@
+# Memecoin desk configuration.
+#
+# Start in "paper" mode. Paper mode uses live market prices but fake money,
+# so you can see what the team would have done before risking anything.
+# Live mode also needs API keys AND the COINBOT_LIVE_CONFIRM env var (see README).
+mode = "paper"
+
+# Crypto.com Exchange spot pairs the team is allowed to trade. Pairs that are
+# missing on the exchange, or too thin right now, are skipped automatically.
+# (Oct 2026 snapshot: only DOGE, SHIB, PEPE, WIF, BONK and TRUMP clear the
+# volume bar below; the others get picked up if they heat up.)
+universe = [
+  "DOGE_USD", "SHIB_USD", "PEPE_USD", "WIF_USD", "BONK_USD", "TRUMP_USD",
+  "FARTCOIN_USD", "PUMP_USD", "USELESS_USD", "FLOKI_USD", "TURBO_USD",
+  "BOME_USD", "PENGU_USD", "SPX_USD", "MOG_USD", "POPCAT_USD",
+]
+
+[paper]
+starting_cash_usd = 500.0
+fee_pct = 0.0025        # per side, deliberately pessimistic
+slippage_pct = 0.002    # added on top of the bid/ask
+
+[live]
+# Hard cap on how much of the account the team may ever trade with,
+# no matter how much USD is sitting in it.
+max_capital_usd = 300.0
+fee_pct = 0.0025        # only used for planning; real fees come from fills
+
+[treasury]
+# What the team has to earn each month. Claude Pro is $20, Max is $100 or $200.
+monthly_subscription_usd = 20.0
+# Share of each net realized profit moved into the ring-fenced reserve
+# until this month's subscription is covered...
+sweep_pct = 0.5
+# ...and after it's covered (the rest compounds).
+sweep_pct_after_goal = 0.2
+
+[scout]
+min_volume_usd_24h = 25000.0  # memecoin USD pairs on Crypto.com are thin
+max_spread_pct = 0.005
+
+[analyst]
+timeframe = "1h"
+candles = 120
+breakout_lookback = 24     # close must beat the highest high of the previous N candles
+volume_surge = 2.0         # last candle volume vs average of the lookback
+ema_fast = 12
+ema_slow = 48
+rsi_period = 14
+rsi_max = 70.0             # skip if it was already overbought *before* the breakout candle
+max_candle_gain = 0.20     # skip if the breakout candle alone is up more than 20%
+max_change_24h = 0.6       # skip coins already up more than 60% in 24h
+
+[risk]
+max_open_positions = 3
+risk_per_trade_pct = 0.01      # lose at most ~1% of trading equity if the stop hits
+max_position_pct = 0.25        # never put more than 25% of equity in one coin
+max_volume_share = 0.005       # never buy more than 0.5% of a coin's 24h volume
+min_order_usd = 10.0
+daily_loss_limit_pct = 0.05    # no new entries for the rest of the UTC day after -5%
+max_drawdown_pct = 0.25        # sell everything and halt after -25% from the peak
+cooldown_hours = 12            # wait before re-entering a coin after an exit
+
+[exits]
+stop_loss_pct = 0.08
+take_profit_pct = 0.25
+trail_activate_pct = 0.08      # start trailing once up 8%...
+trail_pct = 0.06               # ...and exit on a 6% drop from the peak
+max_hold_hours = 72
