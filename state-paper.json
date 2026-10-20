@@ -9,16 +9,16 @@
   },
   "fees_total": 0.15625,
   "halted": null,
-  "last_run": "2026-10-20T05:34:11",
+  "last_run": "2026-10-20T06:40:35",
   "mode": "paper",
   "months": {},
-  "peak_equity": 500.82227634337926,
+  "peak_equity": 500.8373854525044,
   "positions": {
     "PEPE_USD": {
       "cost_usd": 62.5,
       "entry_price": 4.1262360000000006e-06,
       "entry_ts": 1792417766216,
-      "peak_price": 4.191e-06,
+      "peak_price": 4.192e-06,
       "qty": 15109109.125120325,
       "reason": "breakout +0.6% over 24-bar high, volume x6.2, prior RSI 67"
     }
