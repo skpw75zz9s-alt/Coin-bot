@@ -1,5 +1,5 @@
 {
-  "cash": 437.5,
+  "cash": 311.32,
   "consecutive_errors": 0,
   "cooldowns": {},
   "created_at": "2026-10-18T03:04:39",
@@ -7,13 +7,21 @@
     "date": "2026-10-20",
     "start_equity": 500.2783484148749
   },
-  "fees_total": 0.15625,
+  "fees_total": 0.4717,
   "halted": null,
-  "last_run": "2026-10-20T14:36:50",
+  "last_run": "2026-10-20T15:36:22",
   "mode": "paper",
   "months": {},
   "peak_equity": 506.186010082797,
   "positions": {
+    "BONK_USD": {
+      "cost_usd": 63.07,
+      "entry_price": 3.028044e-06,
+      "entry_ts": 1792510582060,
+      "peak_price": 3.028044e-06,
+      "qty": 20776555.756785568,
+      "reason": "breakout +4.0% over 24-bar high, volume x31.6, prior RSI 58"
+    },
     "PEPE_USD": {
       "cost_usd": 62.5,
       "entry_price": 4.1262360000000006e-06,
@@ -21,6 +29,14 @@
       "peak_price": 4.546e-06,
       "qty": 15109109.125120325,
       "reason": "breakout +0.6% over 24-bar high, volume x6.2, prior RSI 67"
+    },
+    "PUMP_USD": {
+      "cost_usd": 63.11,
+      "entry_price": 0.0045261341999999994,
+      "entry_ts": 1792510582060,
+      "peak_price": 0.0045261341999999994,
+      "qty": 13908.60770323602,
+      "reason": "breakout +3.2% over 24-bar high, volume x49.7, prior RSI 61"
     }
   },
   "realized_pnl_total": 0.0,
