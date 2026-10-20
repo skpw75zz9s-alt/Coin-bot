@@ -1,11 +1,11 @@
 # On-chain desk (Solana, paper)
 
-_Updated 2026-10-20T06:03:57 UTC_
+_Updated 2026-10-20T06:58:56 UTC_
 
 - Equity $500.00 (started $500.00, +0.0% incl. reserve)
 - Subscription this month $0.00 / $20.00 · reserve $0.00
 - Realized P&L $+0.00 · fees $0.00
-- Last scan: 70 trending tokens, 47 priced, 5 passed flow checks, 5 holder-checked
+- Last scan: 70 trending tokens, 49 priced, 5 passed flow checks, 5 holder-checked
 
 ## Open positions
 
@@ -22,68 +22,68 @@ None yet.
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $115.39K = 9.6% of $1.20M mcap
-CATALYST: not visible; pool 324h old on pumpswap, 24h -5%, 1h +8%
+LIQUIDITY: $111.05K = 10.0% of $1.12M mcap
+CATALYST: not visible; pool 324h old on pumpswap, 24h -7%, 1h -5%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $1.20M - $1.32M
-TAKE PROFIT: $1.80M sell 40%, $3.01M sell 40%, rest trails 30%
-INVALIDATION: $901.94K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $1.12M - $1.23M
+TAKE PROFIT: $1.67M sell 40%, $2.79M sell 40%, rest trails 30%
+INVALIDATION: $836.79K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +8% in 1h; buyers 1.5x sellers in 1h; 6h trend +36%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: buyers 1.5x sellers in 1h; 6h trend +27%. Against it: holder data not visible.
 
 ### SI276 `HMYd9tosnUXuNHmq7pXmoePRVBLBBjA3JBfydq6upump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $81.78K = 13.0% of $628.35K mcap
-CATALYST: not visible; pool 323h old on pumpswap, 24h +15%, 1h -0%
+LIQUIDITY: $84.20K = 12.7% of $664.39K mcap
+CATALYST: not visible; pool 324h old on pumpswap, 24h +23%, 1h +5%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $628.35K - $691.18K
-TAKE PROFIT: $942.52K sell 40%, $1.57M sell 40%, rest trails 30%
-INVALIDATION: $471.26K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $664.39K - $730.82K
+TAKE PROFIT: $996.58K sell 40%, $1.66M sell 40%, rest trails 30%
+INVALIDATION: $498.29K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: buyers 2.6x sellers in 1h. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: buyers 2.6x sellers in 1h; 6h trend +3%. Against it: holder data not visible.
 
 ### UHI `FGkCj28xhabWTYg9QyzACvs4NsN6LUyesP6EwiHepump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $67.20K = 17.2% of $389.92K mcap
-CATALYST: not visible; pool 29h old on pumpswap, 24h +103%, 1h +3%
+LIQUIDITY: $60.93K = 19.0% of $321.15K mcap
+CATALYST: not visible; pool 30h old on pumpswap, 24h +65%, 1h -13%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $389.92K - $428.91K
-TAKE PROFIT: $584.87K sell 40%, $974.79K sell 40%, rest trails 30%
-INVALIDATION: $292.44K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $321.15K - $353.27K
+TAKE PROFIT: $481.73K sell 40%, $802.88K sell 40%, rest trails 30%
+INVALIDATION: $240.86K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: 1h volume 38% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: 1h volume 49% of liquidity. Against it: holder data not visible.
 
 ### FTR `DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $119.81K = 14.4% of $833.03K mcap
-CATALYST: not visible; pool 124h old on pumpswap, 24h -51%, 1h -5%
+LIQUIDITY: $120.49K = 14.3% of $841.35K mcap
+CATALYST: not visible; pool 125h old on pumpswap, 24h -51%, 1h +1%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $833.03K - $916.33K
-TAKE PROFIT: $1.25M sell 40%, $2.08M sell 40%, rest trails 30%
-INVALIDATION: $624.77K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $841.35K - $925.48K
+TAKE PROFIT: $1.26M sell 40%, $2.10M sell 40%, rest trails 30%
+INVALIDATION: $631.01K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: buyers 2.7x sellers in 1h; 6h trend +5%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: buyers 1.5x sellers in 1h; 6h trend +14%. Against it: holder data not visible.
 
 ### Dacity `nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $314.19K = 4.8% of $6.49M mcap
-CATALYST: not visible; pool 211h old on pumpswap, 24h +54%, 1h -5%
+LIQUIDITY: $300.50K = 5.1% of $5.94M mcap
+CATALYST: not visible; pool 212h old on pumpswap, 24h +37%, 1h -11%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $6.49M - $7.14M
-TAKE PROFIT: $9.74M sell 40%, $16.23M sell 40%, rest trails 30%
-INVALIDATION: $4.87M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $5.94M - $6.53M
+TAKE PROFIT: $8.91M sell 40%, $14.85M sell 40%, rest trails 30%
+INVALIDATION: $4.45M mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: 1h volume 14% of liquidity; 6h trend +16%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: buyers 1.4x sellers in 1h; 1h volume 12% of liquidity; 6h trend +9%. Against it: holder data not visible.
 
