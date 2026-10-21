@@ -9,16 +9,16 @@
   },
   "fees_total": 0.4717,
   "halted": null,
-  "last_run": "2026-10-21T20:34:14",
+  "last_run": "2026-10-21T21:34:56",
   "mode": "paper",
   "months": {},
-  "peak_equity": 520.6111261084966,
+  "peak_equity": 522.1204770849797,
   "positions": {
     "BONK_USD": {
       "cost_usd": 63.07,
       "entry_price": 3.028044e-06,
       "entry_ts": 1792510582060,
-      "peak_price": 3.239e-06,
+      "peak_price": 3.271e-06,
       "qty": 20776555.756785568,
       "reason": "breakout +4.0% over 24-bar high, volume x31.6, prior RSI 58"
     },
@@ -34,7 +34,7 @@
       "cost_usd": 63.11,
       "entry_price": 0.0045261341999999994,
       "entry_ts": 1792510582060,
-      "peak_price": 0.0051459,
+      "peak_price": 0.0052001,
       "qty": 13908.60770323602,
       "reason": "breakout +3.2% over 24-bar high, volume x49.7, prior RSI 61"
     }
