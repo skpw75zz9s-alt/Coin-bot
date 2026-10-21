@@ -4,21 +4,21 @@
   "cooldowns": {},
   "created_at": "2026-10-18T03:04:39",
   "day": {
-    "date": "2026-10-20",
-    "start_equity": 500.2783484148749
+    "date": "2026-10-21",
+    "start_equity": 512.1309338856845
   },
   "fees_total": 0.4717,
   "halted": null,
-  "last_run": "2026-10-20T23:31:13",
+  "last_run": "2026-10-21T00:42:59",
   "mode": "paper",
   "months": {},
-  "peak_equity": 510.78062192830953,
+  "peak_equity": 512.1309338856845,
   "positions": {
     "BONK_USD": {
       "cost_usd": 63.07,
       "entry_price": 3.028044e-06,
       "entry_ts": 1792510582060,
-      "peak_price": 3.072e-06,
+      "peak_price": 3.081e-06,
       "qty": 20776555.756785568,
       "reason": "breakout +4.0% over 24-bar high, volume x31.6, prior RSI 58"
     },
@@ -34,7 +34,7 @@
       "cost_usd": 63.11,
       "entry_price": 0.0045261341999999994,
       "entry_ts": 1792510582060,
-      "peak_price": 0.0047934,
+      "peak_price": 0.004908,
       "qty": 13908.60770323602,
       "reason": "breakout +3.2% over 24-bar high, volume x49.7, prior RSI 61"
     }
