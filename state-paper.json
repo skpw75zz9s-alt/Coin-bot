@@ -1,38 +1,30 @@
 {
-  "cash": 441.3572926006691,
+  "cash": 507.5836683719607,
   "consecutive_errors": 0,
   "cooldowns": {
     "BONK_USD": 1792694556831,
+    "PEPE_USD": 1792701667089,
     "PUMP_USD": 1792694556831
   },
   "created_at": "2026-10-18T03:04:39",
   "day": {
     "date": "2026-10-22",
-    "start_equity": 518.1552020063705
+    "start_equity": 516.2920140063704
   },
-  "fees_total": 0.7976080015054363,
+  "fees_total": 0.9635888931628087,
   "halted": null,
-  "last_run": "2026-10-22T07:47:28",
+  "last_run": "2026-10-22T08:41:07",
   "mode": "paper",
   "months": {
     "2026-10": {
-      "realized": 3.857292600669105,
-      "swept": 1.928647
+      "realized": 7.583668371960705,
+      "swept": 3.791835
     }
   },
-  "peak_equity": 520.1918300849798,
-  "positions": {
-    "PEPE_USD": {
-      "cost_usd": 62.5,
-      "entry_price": 4.1262360000000006e-06,
-      "entry_ts": 1792417766216,
-      "peak_price": 4.699e-06,
-      "qty": 15109109.125120325,
-      "reason": "breakout +0.6% over 24-bar high, volume x6.2, prior RSI 67"
-    }
-  },
-  "realized_pnl_total": 3.857292600669105,
-  "reserve_usd": 1.928647,
+  "peak_equity": 518.3286420849797,
+  "positions": {},
+  "realized_pnl_total": 7.583668371960705,
+  "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
     {
@@ -57,6 +49,18 @@
       "pnl": 3.3886092947092266,
       "pnl_pct": 0.05369369822071346,
       "proceeds_usd": 66.49860929470923,
+      "reason": "trailing-stop"
+    },
+    {
+      "cost_usd": 62.5,
+      "entry_price": 4.1262360000000006e-06,
+      "entry_ts": 1792417766216,
+      "exit_price": 4.394194e-06,
+      "exit_ts": 1792658467089,
+      "instrument": "PEPE_USD",
+      "pnl": 3.7263757712916004,
+      "pnl_pct": 0.05962201234066561,
+      "proceeds_usd": 66.2263757712916,
       "reason": "trailing-stop"
     }
   ],
