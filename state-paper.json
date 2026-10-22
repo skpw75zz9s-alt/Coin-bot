@@ -2,9 +2,7 @@
   "cash": 507.5836683719607,
   "consecutive_errors": 0,
   "cooldowns": {
-    "BONK_USD": 1792694556831,
-    "PEPE_USD": 1792701667089,
-    "PUMP_USD": 1792694556831
+    "PEPE_USD": 1792701667089
   },
   "created_at": "2026-10-18T03:04:39",
   "day": {
@@ -13,7 +11,7 @@
   },
   "fees_total": 0.9635888931628087,
   "halted": null,
-  "last_run": "2026-10-22T18:38:13",
+  "last_run": "2026-10-22T19:36:13",
   "mode": "paper",
   "months": {
     "2026-10": {
