@@ -1,6 +1,6 @@
 # Memecoin desk status
 
-_Updated 2026-10-22T01:38:11 UTC · mode **paper**_
+_Updated 2026-10-22T02:34:27 UTC · mode **paper**_
 
 ## Subscription
 
@@ -9,17 +9,17 @@ _Updated 2026-10-22T01:38:11 UTC · mode **paper**_
 
 ## Trading pot
 
-- Equity: $518.39 (started $500.00, +3.7% incl. reserve)
-- Cash: $311.32 · in positions: $207.07
+- Equity: $514.23 (started $500.00, +2.8% incl. reserve)
+- Cash: $311.32 · in positions: $202.91
 - Realized P&L: $+0.00 · fees paid: $0.47
 
 ## Open positions
 
 | Coin | Entry | Now | P&L | Since |
 |---|---|---|---|---|
-| BONK_USD | 3.028044e-06 | 3.196e-06 | +5.5% | 2026-10-20 15:36 |
-| PEPE_USD | 4.126236e-06 | 4.578e-06 | +10.9% | 2026-10-19 13:49 |
-| PUMP_USD | 0.0045261342 | 0.0051405 | +13.6% | 2026-10-20 15:36 |
+| BONK_USD | 3.028044e-06 | 3.134e-06 | +3.5% | 2026-10-20 15:36 |
+| PEPE_USD | 4.126236e-06 | 4.519e-06 | +9.5% | 2026-10-19 13:49 |
+| PUMP_USD | 0.0045261342 | 0.0049981 | +10.4% | 2026-10-20 15:36 |
 
 ## Recent trades
 
