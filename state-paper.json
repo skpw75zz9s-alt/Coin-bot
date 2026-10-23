@@ -1,5 +1,5 @@
 {
-  "cash": 444.61366837196067,
+  "cash": 381.63366837196065,
   "consecutive_errors": 0,
   "cooldowns": {},
   "created_at": "2026-10-18T03:04:39",
@@ -7,9 +7,9 @@
     "date": "2026-10-23",
     "start_equity": 503.7918333719607
   },
-  "fees_total": 1.1210138931628086,
+  "fees_total": 1.2784638931628087,
   "halted": null,
-  "last_run": "2026-10-23T12:40:02",
+  "last_run": "2026-10-23T13:42:32",
   "mode": "paper",
   "months": {
     "2026-10": {
@@ -23,9 +23,17 @@
       "cost_usd": 62.97,
       "entry_price": 3.2965799999999998e-06,
       "entry_ts": 1792759202612,
-      "peak_price": 3.2965799999999998e-06,
+      "peak_price": 3.308e-06,
       "qty": 19053860.36437763,
       "reason": "breakout +0.3% over 24-bar high, volume x2.9, prior RSI 65"
+    },
+    "SHIB_USD": {
+      "cost_usd": 62.98,
+      "entry_price": 5.123226e-06,
+      "entry_ts": 1792762952127,
+      "peak_price": 5.123226e-06,
+      "qty": 12262303.08793717,
+      "reason": "breakout +0.2% over 24-bar high, volume x2.0, prior RSI 63"
     }
   },
   "realized_pnl_total": 7.583668371960705,
