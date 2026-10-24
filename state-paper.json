@@ -1,32 +1,26 @@
 {
-  "cash": 381.63366837196065,
+  "cash": 439.14529098246516,
   "consecutive_errors": 0,
-  "cooldowns": {},
+  "cooldowns": {
+    "BONK_USD": 1792874033412
+  },
   "created_at": "2026-10-18T03:04:39",
   "day": {
     "date": "2026-10-24",
     "start_equity": 497.1550038839833
   },
-  "fees_total": 1.2784638931628087,
+  "fees_total": 1.4226032982016672,
   "halted": null,
-  "last_run": "2026-10-24T07:36:46",
+  "last_run": "2026-10-24T08:33:53",
   "mode": "paper",
   "months": {
     "2026-10": {
-      "realized": 7.583668371960705,
+      "realized": 2.1252909824652306,
       "swept": 3.791835
     }
   },
   "peak_equity": 518.3286420849797,
   "positions": {
-    "BONK_USD": {
-      "cost_usd": 62.97,
-      "entry_price": 3.2965799999999998e-06,
-      "entry_ts": 1792759202612,
-      "peak_price": 3.308e-06,
-      "qty": 19053860.36437763,
-      "reason": "breakout +0.3% over 24-bar high, volume x2.9, prior RSI 65"
-    },
     "SHIB_USD": {
       "cost_usd": 62.98,
       "entry_price": 5.123226e-06,
@@ -36,7 +30,7 @@
       "reason": "breakout +0.2% over 24-bar high, volume x2.0, prior RSI 63"
     }
   },
-  "realized_pnl_total": 7.583668371960705,
+  "realized_pnl_total": 2.1252909824652306,
   "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
@@ -75,6 +69,18 @@
       "pnl_pct": 0.05962201234066561,
       "proceeds_usd": 66.2263757712916,
       "reason": "trailing-stop"
+    },
+    {
+      "cost_usd": 62.97,
+      "entry_price": 3.2965799999999998e-06,
+      "entry_ts": 1792759202612,
+      "exit_price": 3.025936e-06,
+      "exit_ts": 1792830833412,
+      "instrument": "BONK_USD",
+      "pnl": -5.458377389495475,
+      "pnl_pct": -0.08668218817683777,
+      "proceeds_usd": 57.511622610504524,
+      "reason": "stop-loss"
     }
   ],
   "unswept_profit": 0.0,
