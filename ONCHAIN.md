@@ -1,11 +1,11 @@
 # On-chain desk (Solana, paper)
 
-_Updated 2026-10-25T14:56:52 UTC_
+_Updated 2026-10-25T15:26:48 UTC_
 
 - Equity $500.00 (started $500.00, +0.0% incl. reserve)
 - Subscription this month $0.00 / $20.00 · reserve $0.00
 - Realized P&L $+0.00 · fees $0.00
-- Last scan: 72 trending tokens, 56 priced, 2 passed flow checks, 2 holder-checked
+- Last scan: 76 trending tokens, 56 priced, 2 passed flow checks, 2 holder-checked
 
 ## Open positions
 
@@ -22,26 +22,26 @@ None yet.
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $83.13K = 10.6% of $783.74K mcap
-CATALYST: not visible; pool 40h old on pumpswap, 24h +38%, 1h -16%
+LIQUIDITY: $86.35K = 10.2% of $842.82K mcap
+CATALYST: not visible; pool 40h old on pumpswap, 24h +45%, 1h +11%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $783.74K - $862.12K
-TAKE PROFIT: $1.18M sell 40%, $1.96M sell 40%, rest trails 30%
-INVALIDATION: $587.81K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $842.82K - $927.10K
+TAKE PROFIT: $1.26M sell 40%, $2.11M sell 40%, rest trails 30%
+INVALIDATION: $632.12K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: buyers 1.4x sellers in 1h; 1h volume 98% of liquidity; 6h trend +14%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: +11% in 1h; 1h volume 38% of liquidity; 6h trend +15%. Against it: holder data not visible.
 
-### DacityCoin `DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump`
+### HELL `A75Xx6SeftAmWduv9KGwb2GCjXUAhxozcCUCys9jpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $152.84K = 9.1% of $1.68M mcap
-CATALYST: not visible; pool 241h old on pumpswap, 24h -33%, 1h -15%
+LIQUIDITY: $133.02K = 5.7% of $2.34M mcap
+CATALYST: not visible; pool 290h old on pumpswap, 24h -28%, 1h -16%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $1.68M - $1.85M
-TAKE PROFIT: $2.52M sell 40%, $4.20M sell 40%, rest trails 30%
-INVALIDATION: $1.26M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $2.34M - $2.58M
+TAKE PROFIT: $3.51M sell 40%, $5.86M sell 40%, rest trails 30%
+INVALIDATION: $1.76M mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: 1h volume 30% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Against it: holder data not visible.
 
