@@ -9,7 +9,7 @@
   },
   "fees_total": 1.5775782982016673,
   "halted": null,
-  "last_run": "2026-10-25T00:39:52",
+  "last_run": "2026-10-25T01:33:03",
   "mode": "paper",
   "months": {
     "2026-10": {
@@ -31,7 +31,7 @@
       "cost_usd": 61.99,
       "entry_price": 0.173377062,
       "entry_ts": 1792888792675,
-      "peak_price": 0.173377062,
+      "peak_price": 0.173914,
       "qty": 356.65055277035435,
       "reason": "breakout +4.6% over 24-bar high, volume x11.5, prior RSI 58"
     }
