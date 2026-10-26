@@ -1,7 +1,8 @@
 {
-  "cash": 433.07277249497054,
+  "cash": 492.4363084598837,
   "consecutive_errors": 0,
   "cooldowns": {
+    "SHIB_USD": 1793069215153,
     "USELESS_USD": 1793032622036
   },
   "created_at": "2026-10-18T03:04:39",
@@ -9,28 +10,19 @@
     "date": "2026-10-26",
     "start_equity": 492.364675413652
   },
-  "fees_total": 1.7177223621427835,
+  "fees_total": 1.8665031540347965,
   "halted": null,
-  "last_run": "2026-10-26T11:44:28",
+  "last_run": "2026-10-26T14:46:55",
   "mode": "paper",
   "months": {
     "2026-10": {
-      "realized": -3.947227505029389,
+      "realized": -7.563691540116224,
       "swept": 3.791835
     }
   },
   "peak_equity": 518.3286420849797,
-  "positions": {
-    "SHIB_USD": {
-      "cost_usd": 62.98,
-      "entry_price": 5.123226e-06,
-      "entry_ts": 1792762952127,
-      "peak_price": 5.123226e-06,
-      "qty": 12262303.08793717,
-      "reason": "breakout +0.2% over 24-bar high, volume x2.0, prior RSI 63"
-    }
-  },
-  "realized_pnl_total": -3.947227505029389,
+  "positions": {},
+  "realized_pnl_total": -7.563691540116224,
   "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
@@ -93,6 +85,18 @@
       "pnl_pct": -0.09795964651548023,
       "proceeds_usd": 55.91748151250538,
       "reason": "stop-loss"
+    },
+    {
+      "cost_usd": 62.98,
+      "entry_price": 5.123226e-06,
+      "entry_ts": 1792762952127,
+      "exit_price": 4.8532739999999995e-06,
+      "exit_ts": 1793026015153,
+      "instrument": "SHIB_USD",
+      "pnl": -3.6164640350868353,
+      "pnl_pct": -0.057422420372925304,
+      "proceeds_usd": 59.36353596491316,
+      "reason": "time-stop"
     }
   ],
   "unswept_profit": 0.0,
