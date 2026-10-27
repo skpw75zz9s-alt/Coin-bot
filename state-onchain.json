@@ -6,12 +6,12 @@
   "day": null,
   "fees_total": 0.0,
   "halted": null,
-  "last_run": "2026-10-27T06:36:34",
+  "last_run": "2026-10-27T07:31:23",
   "last_scan": {
-    "candidates": 79,
-    "holder_checked": 5,
-    "passed_flow": 5,
-    "priced": 62
+    "candidates": 76,
+    "holder_checked": 6,
+    "passed_flow": 6,
+    "priced": 64
   },
   "mode": "paper",
   "months": {},
