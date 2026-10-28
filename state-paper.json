@@ -9,7 +9,7 @@
   },
   "fees_total": 2.3264281540347964,
   "halted": null,
-  "last_run": "2026-10-28T08:52:48",
+  "last_run": "2026-10-28T09:50:32",
   "mode": "paper",
   "months": {
     "2026-10": {
@@ -23,7 +23,7 @@
       "cost_usd": 61.19,
       "entry_price": 0.07902273,
       "entry_ts": 1793148892255,
-      "peak_price": 0.08015,
+      "peak_price": 0.080518,
       "qty": 772.3983339983319,
       "reason": "breakout +0.2% over 24-bar high, volume x2.8, prior RSI 67"
     },
@@ -31,7 +31,7 @@
       "cost_usd": 61.7,
       "entry_price": 0.13240428,
       "entry_ts": 1793155637718,
-      "peak_price": 0.1331,
+      "peak_price": 0.13333,
       "qty": 464.832028088518,
       "reason": "breakout +0.3% over 24-bar high, volume x23.2, prior RSI 59"
     },
@@ -39,7 +39,7 @@
       "cost_usd": 61.08,
       "entry_price": 4.49898e-06,
       "entry_ts": 1793123220973,
-      "peak_price": 4.939e-06,
+      "peak_price": 5.025e-06,
       "qty": 13542469.626448661,
       "reason": "breakout +3.5% over 24-bar high, volume x5.7, prior RSI 61"
     }
