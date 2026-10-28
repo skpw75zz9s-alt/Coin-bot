@@ -1,6 +1,6 @@
 # Memecoin desk status
 
-_Updated 2026-10-28T04:45:18 UTC · mode **paper**_
+_Updated 2026-10-28T05:43:45 UTC · mode **paper**_
 
 ## Subscription
 
@@ -9,17 +9,17 @@ _Updated 2026-10-28T04:45:18 UTC · mode **paper**_
 
 ## Trading pot
 
-- Equity: $493.75 (started $500.00, -0.5% incl. reserve)
-- Cash: $304.67 · in positions: $189.07
+- Equity: $492.36 (started $500.00, -0.8% incl. reserve)
+- Cash: $304.67 · in positions: $187.68
 - Realized P&L: $-7.56 · fees paid: $2.33
 
 ## Open positions
 
 | Coin | Entry | Now | P&L | Since |
 |---|---|---|---|---|
-| DOGE_USD | 0.07902273 | 0.079653 | +0.8% | 2026-10-28 00:54 |
-| FARTCOIN_USD | 0.13240428 | 0.1331 | +0.5% | 2026-10-28 02:47 |
-| PEPE_USD | 4.49898e-06 | 4.85e-06 | +7.8% | 2026-10-27 17:47 |
+| DOGE_USD | 0.07902273 | 0.079534 | +0.6% | 2026-10-28 00:54 |
+| FARTCOIN_USD | 0.13240428 | 0.13281 | +0.3% | 2026-10-28 02:47 |
+| PEPE_USD | 4.49898e-06 | 4.764e-06 | +5.9% | 2026-10-27 17:47 |
 
 ## Recent trades
 
