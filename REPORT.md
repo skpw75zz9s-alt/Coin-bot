@@ -1,6 +1,6 @@
 # Memecoin desk status
 
-_Updated 2026-10-29T19:50:46 UTC · mode **paper**_
+_Updated 2026-10-29T20:44:51 UTC · mode **paper**_
 
 ## Subscription
 
@@ -9,22 +9,22 @@ _Updated 2026-10-29T19:50:46 UTC · mode **paper**_
 
 ## Trading pot
 
-- Equity: $497.44 (started $500.00, +0.2% incl. reserve)
-- Cash: $304.67 · in positions: $192.76
-- Realized P&L: $-7.56 · fees paid: $2.33
+- Equity: $484.59 (started $500.00, -2.3% incl. reserve)
+- Cash: $426.17 · in positions: $58.42
+- Realized P&L: $-8.85 · fees paid: $2.63
 
 ## Open positions
 
 | Coin | Entry | Now | P&L | Since |
 |---|---|---|---|---|
-| DOGE_USD | 0.07902273 | 0.079414 | +0.5% | 2026-10-28 00:54 |
-| FARTCOIN_USD | 0.13240428 | 0.12917 | -2.4% | 2026-10-28 02:47 |
-| PEPE_USD | 4.49898e-06 | 5.271e-06 | +17.2% | 2026-10-27 17:47 |
+| DOGE_USD | 0.07902273 | 0.075637 | -4.3% | 2026-10-28 00:54 |
 
 ## Recent trades
 
 | Coin | Exit | Reason | P&L |
 |---|---|---|---|
+| PEPE_USD | 2026-10-29 20:44 | trailing-stop | $+4.70 (+7.7%) |
+| FARTCOIN_USD | 2026-10-29 20:44 | stop-loss | $-5.98 (-9.7%) |
 | SHIB_USD | 2026-10-26 14:46 | time-stop | $-3.62 (-5.7%) |
 | USELESS_USD | 2026-10-26 04:37 | stop-loss | $-6.07 (-9.8%) |
 | BONK_USD | 2026-10-24 08:33 | stop-loss | $-5.46 (-8.7%) |
@@ -32,4 +32,4 @@ _Updated 2026-10-29T19:50:46 UTC · mode **paper**_
 | PUMP_USD | 2026-10-22 06:42 | trailing-stop | $+3.39 (+5.4%) |
 | BONK_USD | 2026-10-22 06:42 | trailing-stop | $+0.47 (+0.7%) |
 
-Win rate 3/6 (50%).
+Win rate 4/8 (50%).

@@ -1,19 +1,22 @@
 {
-  "cash": 308.46630845988375,
+  "cash": 429.96185388799114,
   "consecutive_errors": 0,
-  "cooldowns": {},
+  "cooldowns": {
+    "FARTCOIN_USD": 1793349891234,
+    "PEPE_USD": 1793349891234
+  },
   "created_at": "2026-10-18T03:04:39",
   "day": {
     "date": "2026-10-29",
     "start_equity": 496.03205000802154
   },
-  "fees_total": 2.3264281540347964,
+  "fees_total": 2.6309282678897024,
   "halted": null,
-  "last_run": "2026-10-29T19:50:46",
+  "last_run": "2026-10-29T20:44:51",
   "mode": "paper",
   "months": {
     "2026-10": {
-      "realized": -7.563691540116224,
+      "realized": -8.84814611200882,
       "swept": 3.791835
     }
   },
@@ -26,25 +29,9 @@
       "peak_price": 0.080518,
       "qty": 772.3983339983319,
       "reason": "breakout +0.2% over 24-bar high, volume x2.8, prior RSI 67"
-    },
-    "FARTCOIN_USD": {
-      "cost_usd": 61.7,
-      "entry_price": 0.13240428,
-      "entry_ts": 1793155637718,
-      "peak_price": 0.13432,
-      "qty": 464.832028088518,
-      "reason": "breakout +0.3% over 24-bar high, volume x23.2, prior RSI 59"
-    },
-    "PEPE_USD": {
-      "cost_usd": 61.08,
-      "entry_price": 4.49898e-06,
-      "entry_ts": 1793123220973,
-      "peak_price": 5.403e-06,
-      "qty": 13542469.626448661,
-      "reason": "breakout +3.5% over 24-bar high, volume x5.7, prior RSI 61"
     }
   },
-  "realized_pnl_total": -7.563691540116224,
+  "realized_pnl_total": -8.84814611200882,
   "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
@@ -119,6 +106,30 @@
       "pnl_pct": -0.057422420372925304,
       "proceeds_usd": 59.36353596491316,
       "reason": "time-stop"
+    },
+    {
+      "cost_usd": 61.7,
+      "entry_price": 0.13240428,
+      "entry_ts": 1793155637718,
+      "exit_price": 0.12016918,
+      "exit_ts": 1793306691234,
+      "instrument": "FARTCOIN_USD",
+      "pnl": -5.981162555998665,
+      "pnl_pct": -0.09693942554292811,
+      "proceeds_usd": 55.71883744400134,
+      "reason": "stop-loss"
+    },
+    {
+      "cost_usd": 61.08,
+      "entry_price": 4.49898e-06,
+      "entry_ts": 1793123220973,
+      "exit_price": 4.869242e-06,
+      "exit_ts": 1793306691234,
+      "instrument": "PEPE_USD",
+      "pnl": 4.6967079841060695,
+      "pnl_pct": 0.07689436778169728,
+      "proceeds_usd": 65.77670798410607,
+      "reason": "trailing-stop"
     }
   ],
   "unswept_profit": 0.0,
