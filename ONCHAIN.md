@@ -1,11 +1,11 @@
 # On-chain desk (Solana, paper)
 
-_Updated 2026-10-29T20:14:17 UTC_
+_Updated 2026-10-29T21:02:45 UTC_
 
 - Equity $500.00 (started $500.00, +0.0% incl. reserve)
 - Subscription this month $0.00 / $20.00 · reserve $0.00
 - Realized P&L $+0.00 · fees $0.00
-- Last scan: 70 trending tokens, 51 priced, 1 passed flow checks, 1 holder-checked
+- Last scan: 70 trending tokens, 47 priced, 1 passed flow checks, 1 holder-checked
 
 ## Open positions
 
@@ -22,12 +22,12 @@ None yet.
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $69.94K = 13.3% of $524.92K mcap
-CATALYST: not visible; pool 47h old on raydium, 24h -47%, 1h -8%
+LIQUIDITY: $68.63K = 13.2% of $518.27K mcap
+CATALYST: not visible; pool 47h old on raydium, 24h -54%, 1h -7%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $524.92K - $577.42K
-TAKE PROFIT: $787.38K sell 40%, $1.31M sell 40%, rest trails 30%
-INVALIDATION: $393.69K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $518.27K - $570.10K
+TAKE PROFIT: $777.41K sell 40%, $1.30M sell 40%, rest trails 30%
+INVALIDATION: $388.70K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: 1h volume 18% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: 1h volume 37% of liquidity. Against it: holder data not visible.
 
