@@ -6,9 +6,9 @@
   "day": null,
   "fees_total": 0.0,
   "halted": null,
-  "last_run": "2026-10-30T22:50:17",
+  "last_run": "2026-10-30T23:29:52",
   "last_scan": {
-    "candidates": 73,
+    "candidates": 75,
     "holder_checked": 2,
     "passed_flow": 2,
     "priced": 49
