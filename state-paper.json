@@ -1,34 +1,27 @@
 {
-  "cash": 429.96185388799114,
+  "cash": 488.50714132308855,
   "consecutive_errors": 0,
-  "cooldowns": {},
+  "cooldowns": {
+    "DOGE_USD": 1793451417052
+  },
   "created_at": "2026-10-18T03:04:39",
   "day": {
-    "date": "2026-10-30",
-    "start_equity": 483.40473543726756
+    "date": "2026-10-31",
+    "start_equity": 484.97965564029016
   },
-  "fees_total": 2.6309282678897024,
+  "fees_total": 2.777658311586688,
   "halted": null,
-  "last_run": "2026-10-30T23:37:58",
+  "last_run": "2026-10-31T00:56:57",
   "mode": "paper",
   "months": {
     "2026-10": {
-      "realized": -8.84814611200882,
+      "realized": -11.492858676911418,
       "swept": 3.791835
     }
   },
   "peak_equity": 518.3286420849797,
-  "positions": {
-    "DOGE_USD": {
-      "cost_usd": 61.19,
-      "entry_price": 0.07902273,
-      "entry_ts": 1793148892255,
-      "peak_price": 0.080518,
-      "qty": 772.3983339983319,
-      "reason": "breakout +0.2% over 24-bar high, volume x2.8, prior RSI 67"
-    }
-  },
-  "realized_pnl_total": -8.84814611200882,
+  "positions": {},
+  "realized_pnl_total": -11.492858676911418,
   "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
@@ -127,6 +120,18 @@
       "pnl_pct": 0.07689436778169728,
       "proceeds_usd": 65.77670798410607,
       "reason": "trailing-stop"
+    },
+    {
+      "cost_usd": 61.19,
+      "entry_price": 0.07902273,
+      "entry_ts": 1793148892255,
+      "exit_price": 0.07598672199999999,
+      "exit_ts": 1793408217052,
+      "instrument": "DOGE_USD",
+      "pnl": -2.6447125649025978,
+      "pnl_pct": -0.04322131990362147,
+      "proceeds_usd": 58.5452874350974,
+      "reason": "time-stop"
     }
   ],
   "unswept_profit": 0.0,
