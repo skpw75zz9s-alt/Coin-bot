@@ -1,10 +1,10 @@
 # Memecoin desk status
 
-_Updated 2026-10-31T23:36:27 UTC · mode **paper**_
+_Updated 2026-11-01T01:03:18 UTC · mode **paper**_
 
 ## Subscription
 
-- This month: **$3.79 / $20.00**
+- This month: **$0.00 / $20.00**
 - Reserve (ring-fenced, never traded): **$3.79** ≈ 0 month(s)
 
 ## Trading pot
