@@ -1,11 +1,11 @@
 # On-chain desk (Solana, paper)
 
-_Updated 2026-11-02T15:55:18 UTC_
+_Updated 2026-11-02T16:57:55 UTC_
 
 - Equity $500.00 (started $500.00, +0.0% incl. reserve)
 - Subscription this month $0.00 / $20.00 · reserve $0.00
 - Realized P&L $+0.00 · fees $0.00
-- Last scan: 61 trending tokens, 45 priced, 3 passed flow checks, 3 holder-checked
+- Last scan: 63 trending tokens, 46 priced, 3 passed flow checks, 3 holder-checked
 
 ## Open positions
 
@@ -17,45 +17,45 @@ None yet.
 
 ## Latest analyst calls
 
+### FLOAT `Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr`
+```
+VERDICT: SKIP
+SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
+HOLDER BASE: not visible
+LIQUIDITY: $266.86K = 15.1% of $1.77M mcap
+CATALYST: not visible; pool 115h old on raydium, 24h +176%, 1h +22%
+BIGGEST RISK: holder data not visible
+ENTRY ZONE: $1.77M - $1.95M
+TAKE PROFIT: $2.65M sell 40%, $4.42M sell 40%, rest trails 30%
+INVALIDATION: $1.33M mcap, or liquidity -30%, or 1h sells > 2x buys
+```
+**Who is my exit liquidity?** Working for it: +22% in 1h; buyers 1.9x sellers in 1h; 1h volume 23% of liquidity; 6h trend +20%. Against it: holder data not visible.
+
 ### jeff `HAsTKXYvv65zM7J6Cu5o5PcZsiKMQYo5oz4WPjgqwP6k`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $98.30K = 7.0% of $1.40M mcap
-CATALYST: not visible; pool 135h old on raydium, 24h -31%, 1h +7%
+LIQUIDITY: $94.26K = 7.3% of $1.29M mcap
+CATALYST: not visible; pool 136h old on raydium, 24h -21%, 1h -7%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $1.40M - $1.54M
-TAKE PROFIT: $2.10M sell 40%, $3.50M sell 40%, rest trails 30%
-INVALIDATION: $1.05M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $1.29M - $1.42M
+TAKE PROFIT: $1.94M sell 40%, $3.23M sell 40%, rest trails 30%
+INVALIDATION: $968.37K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +7% in 1h; 1h volume 13% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: buyers 1.3x sellers in 1h; 1h volume 15% of liquidity. Against it: holder data not visible.
 
 ### Anakin `ExxzYBTt3jwU5MUxuw2F4toYbTLdFwThSjyaCn6Xpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $156.00K = 6.2% of $2.50M mcap
-CATALYST: not visible; pool 92h old on pumpswap, 24h +63%, 1h +22%
+LIQUIDITY: $133.48K = 7.2% of $1.86M mcap
+CATALYST: not visible; pool 93h old on pumpswap, 24h -7%, 1h -27%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $2.50M - $2.75M
-TAKE PROFIT: $3.75M sell 40%, $6.25M sell 40%, rest trails 30%
-INVALIDATION: $1.87M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $1.86M - $2.05M
+TAKE PROFIT: $2.79M sell 40%, $4.66M sell 40%, rest trails 30%
+INVALIDATION: $1.40M mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +22% in 1h; 1h volume 40% of liquidity. Against it: holder data not visible.
-
-### FLOAT `Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr`
-```
-VERDICT: SKIP
-SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
-HOLDER BASE: not visible
-LIQUIDITY: $242.10K = 16.6% of $1.46M mcap
-CATALYST: not visible; pool 114h old on raydium, 24h +121%, 1h +12%
-BIGGEST RISK: holder data not visible
-ENTRY ZONE: $1.46M - $1.60M
-TAKE PROFIT: $2.18M sell 40%, $3.64M sell 40%, rest trails 30%
-INVALIDATION: $1.09M mcap, or liquidity -30%, or 1h sells > 2x buys
-```
-**Who is my exit liquidity?** Working for it: +12% in 1h; buyers 2.5x sellers in 1h; 6h trend +6%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: 1h volume 77% of liquidity. Against it: holder data not visible.
 
