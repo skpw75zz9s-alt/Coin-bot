@@ -1,6 +1,6 @@
 # Memecoin desk status
 
-_Updated 2026-11-02T17:57:27 UTC · mode **paper**_
+_Updated 2026-11-02T18:55:56 UTC · mode **paper**_
 
 ## Subscription
 
@@ -9,15 +9,15 @@ _Updated 2026-11-02T17:57:27 UTC · mode **paper**_
 
 ## Trading pot
 
-- Equity: $480.92 (started $500.00, -3.1% incl. reserve)
-- Cash: $424.13 · in positions: $56.80
+- Equity: $479.97 (started $500.00, -3.2% incl. reserve)
+- Cash: $424.13 · in positions: $55.85
 - Realized P&L: $-11.49 · fees paid: $2.93
 
 ## Open positions
 
 | Coin | Entry | Now | P&L | Since |
 |---|---|---|---|---|
-| TRUMP_USD | 1.717428 | 1.614 | -6.0% | 2026-11-01 15:36 |
+| TRUMP_USD | 1.717428 | 1.587 | -7.6% | 2026-11-01 15:36 |
 
 ## Recent trades
 
