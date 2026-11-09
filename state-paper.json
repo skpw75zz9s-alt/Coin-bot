@@ -4,12 +4,12 @@
   "cooldowns": {},
   "created_at": "2026-10-18T03:04:39",
   "day": {
-    "date": "2026-11-08",
-    "start_equity": 479.33749666601824
+    "date": "2026-11-09",
+    "start_equity": 478.7270617899141
   },
   "fees_total": 3.2173097284862613,
   "halted": null,
-  "last_run": "2026-11-08T20:24:25",
+  "last_run": "2026-11-09T00:47:00",
   "mode": "paper",
   "months": {
     "2026-10": {
