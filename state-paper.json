@@ -1,15 +1,17 @@
 {
-  "cash": 423.2093316660182,
+  "cash": 478.32703843903573,
   "consecutive_errors": 0,
-  "cooldowns": {},
+  "cooldowns": {
+    "PEPE_USD": 1794475280544
+  },
   "created_at": "2026-10-18T03:04:39",
   "day": {
     "date": "2026-11-11",
     "start_equity": 482.19924311786593
   },
-  "fees_total": 3.2173097284862613,
+  "fees_total": 3.3554493444587363,
   "halted": null,
-  "last_run": "2026-11-11T14:05:32",
+  "last_run": "2026-11-11T21:21:20",
   "mode": "paper",
   "months": {
     "2026-10": {
@@ -17,22 +19,13 @@
       "swept": 3.791835
     },
     "2026-11": {
-      "realized": -5.377809657070337,
+      "realized": -10.180102884052829,
       "swept": 0.0
     }
   },
   "peak_equity": 518.3286420849797,
-  "positions": {
-    "PEPE_USD": {
-      "cost_usd": 59.92,
-      "entry_price": 5.078136e-06,
-      "entry_ts": 1794153321728,
-      "peak_price": 5.334e-06,
-      "qty": 11770106.196446886,
-      "reason": "breakout +0.4% over 24-bar high, volume x9.1, prior RSI 67"
-    }
-  },
-  "realized_pnl_total": -16.870668333981754,
+  "positions": {},
+  "realized_pnl_total": -21.672961560964247,
   "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
@@ -155,6 +148,18 @@
       "pnl_pct": -0.0887573800473731,
       "proceeds_usd": 55.21219034292967,
       "reason": "stop-loss"
+    },
+    {
+      "cost_usd": 59.92,
+      "entry_price": 5.078136e-06,
+      "entry_ts": 1794153321728,
+      "exit_price": 4.6945920000000005e-06,
+      "exit_ts": 1794432080544,
+      "instrument": "PEPE_USD",
+      "pnl": -4.802293226982492,
+      "pnl_pct": -0.08014508055711769,
+      "proceeds_usd": 55.11770677301751,
+      "reason": "time-stop"
     }
   ],
   "unswept_profit": 0.0,
