@@ -1,11 +1,11 @@
 # On-chain desk (Solana, paper)
 
-_Updated 2026-11-11T18:06:14 UTC_
+_Updated 2026-11-12T00:46:37 UTC_
 
 - Equity $500.00 (started $500.00, +0.0% incl. reserve)
 - Subscription this month $0.00 / $20.00 · reserve $0.00
 - Realized P&L $+0.00 · fees $0.00
-- Last scan: 76 trending tokens, 57 priced, 4 passed flow checks, 4 holder-checked
+- Last scan: 83 trending tokens, 66 priced, 3 passed flow checks, 3 holder-checked
 
 ## Open positions
 
@@ -17,59 +17,45 @@ None yet.
 
 ## Latest analyst calls
 
-### Leonida `BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump`
+### 咪好 `Hg3w7GdPViZ5URuCNnK6EwXLzSTmVwX6UXLeD6Pbpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $50.66K = 13.6% of $372.18K mcap
-CATALYST: not visible; pool 142h old on pumpswap, 24h +38%, 1h +11%
+LIQUIDITY: $52.22K = 12.4% of $419.80K mcap
+CATALYST: not visible; pool 24h old on pumpswap, 24h +115%, 1h +23%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $372.18K - $409.39K
-TAKE PROFIT: $558.27K sell 40%, $930.44K sell 40%, rest trails 30%
-INVALIDATION: $279.13K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $419.80K - $461.78K
+TAKE PROFIT: $629.70K sell 40%, $1.05M sell 40%, rest trails 30%
+INVALIDATION: $314.85K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +11% in 1h; 1h volume 24% of liquidity; 6h trend +5%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: +23% in 1h; buyers 2.2x sellers in 1h; 1h volume 116% of liquidity; 6h trend +4%. Against it: holder data not visible.
 
-### FLOAT `Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr`
+### BIG `34DXEU2ttEtBSb1TqGJm7izgvYTTkqKcCoiNWdPDpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $698.43K = 6.4% of $10.85M mcap
-CATALYST: not visible; pool 332h old on raydium, 24h +8%, 1h +18%
+LIQUIDITY: $82.48K = 10.5% of $787.74K mcap
+CATALYST: not visible; pool 81h old on pumpswap, 24h -23%, 1h -15%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $10.85M - $11.93M
-TAKE PROFIT: $16.27M sell 40%, $27.11M sell 40%, rest trails 30%
-INVALIDATION: $8.13M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $787.74K - $866.51K
+TAKE PROFIT: $1.18M sell 40%, $1.97M sell 40%, rest trails 30%
+INVALIDATION: $590.80K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +18% in 1h; 1h volume 51% of liquidity; 6h trend +10%. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: 1h volume 12% of liquidity. Against it: holder data not visible.
 
-### STANK `5wsjHxT5nW5jQuVupXUNnYszF3WoWCfGGk9LMcsCJzY8`
+### WASTED `GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $116.54K = 3.1% of $3.74M mcap
-CATALYST: not visible; pool 316h old on raydium, 24h -14%, 1h +11%
+LIQUIDITY: $104.10K = 9.0% of $1.16M mcap
+CATALYST: not visible; pool 295h old on pumpswap, 24h -24%, 1h +2%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $3.74M - $4.12M
-TAKE PROFIT: $5.61M sell 40%, $9.35M sell 40%, rest trails 30%
-INVALIDATION: $2.81M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $1.16M - $1.27M
+TAKE PROFIT: $1.73M sell 40%, $2.89M sell 40%, rest trails 30%
+INVALIDATION: $866.94K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +11% in 1h; 1h volume 54% of liquidity. Against it: holder data not visible.
-
-### timmy `TiMSdJrkVwUpeEWJpuqRvHt4wVS7uH77LbNPGGVJXNw`
-```
-VERDICT: SKIP
-SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
-HOLDER BASE: not visible
-LIQUIDITY: $49.80K = 6.9% of $726.67K mcap
-CATALYST: not visible; pool 265h old on raydium, 24h +37%, 1h -4%
-BIGGEST RISK: holder data not visible
-ENTRY ZONE: $726.67K - $799.33K
-TAKE PROFIT: $1.09M sell 40%, $1.82M sell 40%, rest trails 30%
-INVALIDATION: $545.00K mcap, or liquidity -30%, or 1h sells > 2x buys
-```
-**Who is my exit liquidity?** Working for it: 1h volume 20% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: buyers 1.3x sellers in 1h. Against it: holder data not visible.
 
