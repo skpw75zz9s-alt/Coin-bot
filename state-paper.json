@@ -1,5 +1,5 @@
 {
-  "cash": 419.00703843903574,
+  "cash": 300.5870384390357,
   "consecutive_errors": 0,
   "cooldowns": {},
   "created_at": "2026-10-18T03:04:39",
@@ -7,9 +7,9 @@
     "date": "2026-11-19",
     "start_equity": 472.15973936717944
   },
-  "fees_total": 3.503749344458736,
+  "fees_total": 3.7997993444587363,
   "halted": null,
-  "last_run": "2026-11-19T03:15:33",
+  "last_run": "2026-11-19T12:52:47",
   "mode": "paper",
   "months": {
     "2026-10": {
@@ -23,6 +23,22 @@
   },
   "peak_equity": 518.3286420849797,
   "positions": {
+    "BONK_USD": {
+      "cost_usd": 59.19,
+      "entry_price": 2.39979e-06,
+      "entry_ts": 1795092767137,
+      "peak_price": 2.39979e-06,
+      "qty": 24602996.512194816,
+      "reason": "breakout +0.0% over 24-bar high, volume x3.2, prior RSI 50"
+    },
+    "PEPE_USD": {
+      "cost_usd": 59.23,
+      "entry_price": 3.994974e-06,
+      "entry_ts": 1795092767137,
+      "peak_price": 3.994974e-06,
+      "qty": 14789063.70854979,
+      "reason": "breakout +2.3% over 24-bar high, volume x2.7, prior RSI 60"
+    },
     "TRUMP_USD": {
       "cost_usd": 59.32,
       "entry_price": 0.9819599999999999,
