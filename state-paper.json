@@ -1,15 +1,17 @@
 {
-  "cash": 300.5870384390357,
+  "cash": 353.35278977100836,
   "consecutive_errors": 0,
-  "cooldowns": {},
+  "cooldowns": {
+    "PEPE_USD": 1795186930006
+  },
   "created_at": "2026-10-18T03:04:39",
   "day": {
-    "date": "2026-11-19",
-    "start_equity": 472.15973936717944
+    "date": "2026-11-20",
+    "start_equity": 461.31961931095225
   },
-  "fees_total": 3.7997993444587363,
+  "fees_total": 3.9320443352656853,
   "halted": null,
-  "last_run": "2026-11-19T21:25:08",
+  "last_run": "2026-11-20T03:02:10",
   "mode": "paper",
   "months": {
     "2026-10": {
@@ -17,7 +19,7 @@
       "swept": 3.791835
     },
     "2026-11": {
-      "realized": -10.180102884052829,
+      "realized": -16.64435155208021,
       "swept": 0.0
     }
   },
@@ -31,14 +33,6 @@
       "qty": 24602996.512194816,
       "reason": "breakout +0.0% over 24-bar high, volume x3.2, prior RSI 50"
     },
-    "PEPE_USD": {
-      "cost_usd": 59.23,
-      "entry_price": 3.994974e-06,
-      "entry_ts": 1795092767137,
-      "peak_price": 3.994974e-06,
-      "qty": 14789063.70854979,
-      "reason": "breakout +2.3% over 24-bar high, volume x2.7, prior RSI 60"
-    },
     "TRUMP_USD": {
       "cost_usd": 59.32,
       "entry_price": 0.9819599999999999,
@@ -48,7 +42,7 @@
       "reason": "breakout +0.3% over 24-bar high, volume x5.6, prior RSI 61"
     }
   },
-  "realized_pnl_total": -21.672961560964247,
+  "realized_pnl_total": -28.137210228991627,
   "reserve_usd": 3.791835,
   "starting_equity": 500.0,
   "trades": [
@@ -183,6 +177,18 @@
       "pnl_pct": -0.08014508055711769,
       "proceeds_usd": 55.11770677301751,
       "reason": "time-stop"
+    },
+    {
+      "cost_usd": 59.23,
+      "entry_price": 3.994974e-06,
+      "entry_ts": 1795092767137,
+      "exit_price": 3.576832e-06,
+      "exit_ts": 1795143730006,
+      "instrument": "PEPE_USD",
+      "pnl": -6.4642486680273805,
+      "pnl_pct": -0.10913808320154281,
+      "proceeds_usd": 52.765751331972616,
+      "reason": "stop-loss"
     }
   ],
   "unswept_profit": 0.0,
