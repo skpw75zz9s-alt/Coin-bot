@@ -1,6 +1,6 @@
 # Memecoin desk status
 
-_Updated 2026-11-20T11:24:21 UTC · mode **paper**_
+_Updated 2026-11-20T20:01:10 UTC · mode **paper**_
 
 ## Subscription
 
@@ -9,20 +9,19 @@ _Updated 2026-11-20T11:24:21 UTC · mode **paper**_
 
 ## Trading pot
 
-- Equity: $457.81 (started $500.00, -7.7% incl. reserve)
-- Cash: $402.86 · in positions: $54.96
-- Realized P&L: $-34.03 · fees paid: $4.07
+- Equity: $453.43 (started $500.00, -8.6% incl. reserve)
+- Cash: $453.43 · in positions: $0.00
+- Realized P&L: $-42.78 · fees paid: $4.19
 
 ## Open positions
 
-| Coin | Entry | Now | P&L | Since |
-|---|---|---|---|---|
-| TRUMP_USD | 0.98196 | 0.912 | -7.1% | 2026-11-17 13:10 |
+None.
 
 ## Recent trades
 
 | Coin | Exit | Reason | P&L |
 |---|---|---|---|
+| TRUMP_USD | 2026-11-20 20:01 | stop-loss | $-8.75 (-14.8%) |
 | BONK_USD | 2026-11-20 11:24 | stop-loss | $-5.89 (-10.0%) |
 | PEPE_USD | 2026-11-20 03:02 | stop-loss | $-6.46 (-10.9%) |
 | PEPE_USD | 2026-11-11 21:21 | time-stop | $-4.80 (-8.0%) |
@@ -37,4 +36,4 @@ _Updated 2026-11-20T11:24:21 UTC · mode **paper**_
 | PUMP_USD | 2026-10-22 06:42 | trailing-stop | $+3.39 (+5.4%) |
 | BONK_USD | 2026-10-22 06:42 | trailing-stop | $+0.47 (+0.7%) |
 
-Win rate 4/13 (31%).
+Win rate 4/14 (29%).
