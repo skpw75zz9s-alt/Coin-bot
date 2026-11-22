@@ -1,11 +1,11 @@
 # On-chain desk (Solana, paper)
 
-_Updated 2026-11-22T06:30:27 UTC_
+_Updated 2026-11-22T14:55:12 UTC_
 
 - Equity $500.00 (started $500.00, +0.0% incl. reserve)
 - Subscription this month $0.00 / $20.00 · reserve $0.00
 - Realized P&L $+0.00 · fees $0.00
-- Last scan: 65 trending tokens, 51 priced, 4 passed flow checks, 4 holder-checked
+- Last scan: 58 trending tokens, 45 priced, 3 passed flow checks, 3 holder-checked
 
 ## Open positions
 
@@ -17,59 +17,45 @@ None yet.
 
 ## Latest analyst calls
 
-### HOGE `FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump`
+### greg `4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $118.38K = 14.0% of $848.51K mcap
-CATALYST: not visible; pool 168h old on pumpswap, 24h +12%, 1h +8%
+LIQUIDITY: $46.14K = 15.1% of $306.01K mcap
+CATALYST: not visible; pool 276h old on pumpswap, 24h +3%, 1h -6%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $848.51K - $933.36K
-TAKE PROFIT: $1.27M sell 40%, $2.12M sell 40%, rest trails 30%
-INVALIDATION: $636.38K mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $306.01K - $336.61K
+TAKE PROFIT: $459.02K sell 40%, $765.03K sell 40%, rest trails 30%
+INVALIDATION: $229.51K mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: +8% in 1h; 1h volume 12% of liquidity; 6h trend +1%. Against it: holder data not visible.
-
-### Singularity `7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump`
-```
-VERDICT: SKIP
-SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
-HOLDER BASE: not visible
-LIQUIDITY: $60.29K = 12.0% of $500.71K mcap
-CATALYST: not visible; pool 34h old on pumpswap, 24h +238%, 1h +1%
-BIGGEST RISK: holder data not visible
-ENTRY ZONE: $500.71K - $550.78K
-TAKE PROFIT: $751.06K sell 40%, $1.25M sell 40%, rest trails 30%
-INVALIDATION: $375.53K mcap, or liquidity -30%, or 1h sells > 2x buys
-```
-**Who is my exit liquidity?** Working for it: buyers 1.5x sellers in 1h; 1h volume 45% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: 1h volume 19% of liquidity; 6h trend +6%. Against it: holder data not visible.
 
 ### FIONA `B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $117.99K = 8.3% of $1.42M mcap
-CATALYST: not visible; pool 58h old on pumpswap, 24h +60%, 1h -8%
+LIQUIDITY: $131.03K = 7.7% of $1.70M mcap
+CATALYST: not visible; pool 66h old on pumpswap, 24h +65%, 1h +10%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $1.42M - $1.57M
-TAKE PROFIT: $2.14M sell 40%, $3.56M sell 40%, rest trails 30%
-INVALIDATION: $1.07M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $1.70M - $1.87M
+TAKE PROFIT: $2.54M sell 40%, $4.24M sell 40%, rest trails 30%
+INVALIDATION: $1.27M mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: 1h volume 28% of liquidity. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: +10% in 1h; 1h volume 52% of liquidity; 6h trend +7%. Against it: holder data not visible.
 
 ### Rings `65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring`
 ```
 VERDICT: SKIP
 SMART MONEY: not visible (needs a paid wallet-tracking source); confidence lowered
 HOLDER BASE: not visible
-LIQUIDITY: $147.21K = 5.0% of $2.95M mcap
-CATALYST: not visible; pool 275h old on meteora, 24h +8%, 1h +1%
+LIQUIDITY: $160.94K = 4.7% of $3.44M mcap
+CATALYST: not visible; pool 284h old on meteora, 24h +41%, 1h -8%
 BIGGEST RISK: holder data not visible
-ENTRY ZONE: $2.95M - $3.25M
-TAKE PROFIT: $4.43M sell 40%, $7.38M sell 40%, rest trails 30%
-INVALIDATION: $2.21M mcap, or liquidity -30%, or 1h sells > 2x buys
+ENTRY ZONE: $3.44M - $3.78M
+TAKE PROFIT: $5.16M sell 40%, $8.59M sell 40%, rest trails 30%
+INVALIDATION: $2.58M mcap, or liquidity -30%, or 1h sells > 2x buys
 ```
-**Who is my exit liquidity?** Working for it: buyers 3.1x sellers in 1h. Against it: holder data not visible.
+**Who is my exit liquidity?** Working for it: 6h trend +12%. Against it: holder data not visible.
 
